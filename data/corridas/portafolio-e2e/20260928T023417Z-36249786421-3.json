@@ -1,0 +1,11 @@
+{
+  "suite": "portafolio-e2e",
+  "importada": true,
+  "commit": "b4ad1ba",
+  "corrida": null,
+  "fallos": [],
+  "fecha": "2026-09-28T02:34:17Z",
+  "resultado": "no-corrio",
+  "motivo": "Run npm run check",
+  "detalle": false
+}

@@ -1,16 +1,17 @@
 {
   "suite": "api-torneo",
-  "fecha": "2026-10-02T05:20:09Z",
+  "importada": true,
+  "commit": "748eb31",
+  "corrida": "https://github.com/daveprojectdev/api-torneo/actions/runs/36375512366",
+  "fallos": [],
+  "fecha": "2026-09-28T03:54:17Z",
   "resultado": "pasa",
-  "pasadas": 90,
+  "pasadas": 78,
   "fallidas": 0,
   "inestables": 0,
   "omitidas": 0,
-  "duracion_s": 23,
-  "cobertura": 99.4,
-  "commit": "030aaaf",
-  "corrida": "https://github.com/daveprojectdev/api-torneo/actions/runs/36968157578",
-  "fallos": [],
+  "duracion_s": 24,
+  "cobertura": 99.3,
   "pruebas": [
     {
       "archivo": "tests/test_api.py",
@@ -33,7 +34,7 @@
       "titulo": "test_jornadas_con_estado_derivado",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 8,
+      "ms": 9,
       "error": null
     },
     {
@@ -49,7 +50,7 @@
       "titulo": "test_la_liga_tiene_21_partidos_y_cada_equipo_juega_6",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 37,
+      "ms": 39,
       "error": null
     },
     {
@@ -57,7 +58,7 @@
       "titulo": "test_filtros_combinados",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 4,
+      "ms": 5,
       "error": null
     },
     {
@@ -65,7 +66,7 @@
       "titulo": "test_paginacion_recorre_todo_sin_repetir",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 27,
+      "ms": 29,
       "error": null
     },
     {
@@ -81,7 +82,7 @@
       "titulo": "test_tabla_historica",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 5,
+      "ms": 6,
       "error": null
     },
     {
@@ -105,7 +106,7 @@
       "titulo": "test_simular_desde_cero",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 5,
+      "ms": 6,
       "error": null
     },
     {
@@ -145,7 +146,7 @@
       "titulo": "test_simular_rechaza_lo_imposible[resultado4-results.0.extra]",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 4,
+      "ms": 5,
       "error": null
     },
     {
@@ -161,7 +162,7 @@
       "titulo": "test_404_en_formato_rfc_9457[/v1/teams/aguilas]",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 4,
+      "ms": 5,
       "error": null
     },
     {
@@ -209,7 +210,7 @@
       "titulo": "test_metodo_no_permitido_dice_cuales_si",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 3,
+      "ms": 4,
       "error": null
     },
     {
@@ -217,7 +218,7 @@
       "titulo": "test_head_como_get_sin_cuerpo",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 12,
+      "ms": 13,
       "error": null
     },
     {
@@ -241,7 +242,7 @@
       "titulo": "test_error_inesperado_no_filtra_detalles",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 5,
+      "ms": 6,
       "error": null
     },
     {
@@ -281,23 +282,7 @@
       "titulo": "test_salud_y_raiz",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 7,
-      "error": null
-    },
-    {
-      "archivo": "tests/test_api.py",
-      "titulo": "test_fase_final_sin_marcador_y_con_podio",
-      "proyecto": null,
-      "estado": "pasa",
-      "ms": 5,
-      "error": null
-    },
-    {
-      "archivo": "tests/test_api.py",
-      "titulo": "test_la_fase_final_no_toca_la_tabla_de_la_liga",
-      "proyecto": null,
-      "estado": "pasa",
-      "ms": 9,
+      "ms": 8,
       "error": null
     },
     {
@@ -305,7 +290,7 @@
       "titulo": "test_la_api_cumple_su_openapi[GET /v1/teams]",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 289,
+      "ms": 283,
       "error": null
     },
     {
@@ -313,7 +298,7 @@
       "titulo": "test_la_api_cumple_su_openapi[GET /v1/teams/{team_id}]",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 605,
+      "ms": 598,
       "error": null
     },
     {
@@ -329,7 +314,7 @@
       "titulo": "test_la_api_cumple_su_openapi[GET /v1/jornadas/{number}]",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 451,
+      "ms": 493,
       "error": null
     },
     {
@@ -337,7 +322,7 @@
       "titulo": "test_la_api_cumple_su_openapi[GET /v1/matches]",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 1059,
+      "ms": 1135,
       "error": null
     },
     {
@@ -345,7 +330,7 @@
       "titulo": "test_la_api_cumple_su_openapi[GET /v1/matches/{match_id}]",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 629,
+      "ms": 765,
       "error": null
     },
     {
@@ -353,7 +338,7 @@
       "titulo": "test_la_api_cumple_su_openapi[GET /v1/standings]",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 735,
+      "ms": 741,
       "error": null
     },
     {
@@ -361,15 +346,7 @@
       "titulo": "test_la_api_cumple_su_openapi[POST /v1/standings/simulate]",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 1980,
-      "error": null
-    },
-    {
-      "archivo": "tests/test_contrato.py",
-      "titulo": "test_la_api_cumple_su_openapi[GET /v1/final-phase]",
-      "proyecto": null,
-      "estado": "pasa",
-      "ms": 42,
+      "ms": 1830,
       "error": null
     },
     {
@@ -377,7 +354,7 @@
       "titulo": "test_la_api_cumple_su_openapi[GET /health]",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 40,
+      "ms": 130,
       "error": null
     },
     {
@@ -385,7 +362,7 @@
       "titulo": "test_la_api_cumple_su_openapi[GET /problems/{slug}]",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 576,
+      "ms": 652,
       "error": null
     },
     {
@@ -401,7 +378,7 @@
       "titulo": "test_jornada_inexistente",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 1,
+      "ms": 3,
       "error": null
     },
     {
@@ -409,7 +386,7 @@
       "titulo": "test_equipo_inexistente",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 2,
+      "ms": 3,
       "error": null
     },
     {
@@ -425,7 +402,7 @@
       "titulo": "test_estado_de_jornada_derivado[estados0-pending]",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 1,
+      "ms": 2,
       "error": null
     },
     {
@@ -433,7 +410,7 @@
       "titulo": "test_estado_de_jornada_derivado[estados1-in_progress]",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 1,
+      "ms": 2,
       "error": null
     },
     {
@@ -442,14 +419,6 @@
       "proyecto": null,
       "estado": "pasa",
       "ms": 1,
-      "error": null
-    },
-    {
-      "archivo": "tests/test_datos.py",
-      "titulo": "test_fase_final_incoherente_no_arranca",
-      "proyecto": null,
-      "estado": "pasa",
-      "ms": 2,
       "error": null
     },
     {
@@ -505,7 +474,7 @@
       "titulo": "test_set_imposible[25-24-ventaja]",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 1,
+      "ms": 2,
       "error": null
     },
     {
@@ -545,7 +514,7 @@
       "titulo": "test_set_imposible[-1-25-negativos]",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 1,
+      "ms": 2,
       "error": null
     },
     {
@@ -641,7 +610,7 @@
       "titulo": "test_todo_set_generado_es_valido",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 86,
+      "ms": 89,
       "error": null
     },
     {
@@ -649,7 +618,7 @@
       "titulo": "test_invariantes_de_la_tabla",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 6117,
+      "ms": 6464,
       "error": null
     },
     {
@@ -657,63 +626,7 @@
       "titulo": "test_el_orden_de_los_partidos_no_cambia_la_tabla",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 3719,
-      "error": null
-    },
-    {
-      "archivo": "tests/test_dominio.py",
-      "titulo": "test_podio_de_un_cuadro_valido",
-      "proyecto": null,
-      "estado": "pasa",
-      "ms": 1,
-      "error": null
-    },
-    {
-      "archivo": "tests/test_dominio.py",
-      "titulo": "test_cuadro_imposible[cambio0-cuatro primeros]",
-      "proyecto": null,
-      "estado": "pasa",
-      "ms": 2,
-      "error": null
-    },
-    {
-      "archivo": "tests/test_dominio.py",
-      "titulo": "test_cuadro_imposible[cambio1-las dos semifinales]",
-      "proyecto": null,
-      "estado": "pasa",
-      "ms": 2,
-      "error": null
-    },
-    {
-      "archivo": "tests/test_dominio.py",
-      "titulo": "test_cuadro_imposible[cambio2-perdedores de semifinal]",
-      "proyecto": null,
-      "estado": "pasa",
-      "ms": 2,
-      "error": null
-    },
-    {
-      "archivo": "tests/test_dominio.py",
-      "titulo": "test_cuadro_imposible[cambio3-ganadores de semifinal]",
-      "proyecto": null,
-      "estado": "pasa",
-      "ms": 1,
-      "error": null
-    },
-    {
-      "archivo": "tests/test_dominio.py",
-      "titulo": "test_falta_un_partido_de_la_fase_final",
-      "proyecto": null,
-      "estado": "pasa",
-      "ms": 1,
-      "error": null
-    },
-    {
-      "archivo": "tests/test_dominio.py",
-      "titulo": "test_el_ganador_tiene_que_haber_jugado",
-      "proyecto": null,
-      "estado": "pasa",
-      "ms": 2,
+      "ms": 3917,
       "error": null
     },
     {
@@ -721,15 +634,7 @@
       "titulo": "test_la_tabla_coincide_con_la_app_en_produccion",
       "proyecto": null,
       "estado": "pasa",
-      "ms": 6,
-      "error": null
-    },
-    {
-      "archivo": "tests/test_oraculo_produccion.py",
-      "titulo": "test_el_podio_coincide_con_la_app_en_produccion",
-      "proyecto": null,
-      "estado": "pasa",
-      "ms": 4,
+      "ms": 7,
       "error": null
     }
   ],

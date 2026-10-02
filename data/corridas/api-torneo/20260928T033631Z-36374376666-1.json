@@ -1,0 +1,11 @@
+{
+  "suite": "api-torneo",
+  "importada": true,
+  "commit": "f37b9a3",
+  "corrida": "https://github.com/daveprojectdev/api-torneo/actions/runs/36374376666",
+  "fallos": [],
+  "fecha": "2026-09-28T03:36:31Z",
+  "resultado": "no-corrio",
+  "motivo": "Set up job",
+  "detalle": false
+}
