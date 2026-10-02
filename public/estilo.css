@@ -16,13 +16,25 @@
   --f-texto:"Atkinson Hyperlegible Next",system-ui,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,monospace;
 }
+/* El oscuro, dos veces, como en el portafolio: una para quien no ha elegido
+   y su sistema pide oscuro, otra para la elección manual (cookie `tema`,
+   compartida con davidameth.dev). Las dos deben decir lo mismo. */
+:root{color-scheme:light}
 @media (prefers-color-scheme:dark){
-  :root{
+  :root:not([data-tema="claro"]){
     --bg:#0c0d10;--nucleo:#15171c;--tinta:#f1f2f4;--suave:#a2a8b3;
     --linea:rgb(255 255 255 / .09);--bisel:rgb(255 255 255 / .04);--bisel-borde:rgb(255 255 255 / .07);
     --verde:#3ddc97;--verde-txt:#3ddc97;--rojo:#ff6b5e;--rojo-txt:#ff8a80;
     --sombra:0 30px 60px -30px rgb(0 0 0 / .6);
+    color-scheme:dark;
   }
+}
+:root[data-tema="oscuro"]{
+  --bg:#0c0d10;--nucleo:#15171c;--tinta:#f1f2f4;--suave:#a2a8b3;
+  --linea:rgb(255 255 255 / .09);--bisel:rgb(255 255 255 / .04);--bisel-borde:rgb(255 255 255 / .07);
+  --verde:#3ddc97;--verde-txt:#3ddc97;--rojo:#ff6b5e;--rojo-txt:#ff8a80;
+  --sombra:0 30px 60px -30px rgb(0 0 0 / .6);
+  color-scheme:dark;
 }
 
 *{box-sizing:border-box}
@@ -36,7 +48,15 @@ code{font:400 .78rem var(--f-mono)}
 .barra{display:flex;justify-content:space-between;align-items:center;margin-bottom:72px}
 .marca{font:800 26px/1 var(--f-display);letter-spacing:-.04em;text-decoration:none;display:inline-flex;align-items:baseline;gap:2px}
 .marca .punto{width:.24em;height:.24em;border-radius:50%;background:var(--acento);display:inline-block}
+.herramientas{display:flex;align-items:center;gap:6px}
 .idioma{font-size:.875rem;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--linea);text-decoration:none}
+.tool{display:inline-grid;place-items:center;width:40px;height:40px;border:0;border-radius:999px;background:none;color:var(--suave);cursor:pointer}
+.tool:hover{background:var(--bisel);color:var(--tinta)}
+.tool:focus-visible{outline:2px solid var(--acento);outline-offset:3px}
+.tool .i{width:18px;height:18px}
+.tool .sol{display:none}
+:root[data-tema="oscuro"] .tool .sol{display:block}
+:root[data-tema="oscuro"] .tool .luna{display:none}
 
 .portada{margin-bottom:48px}
 h1{font:800 clamp(2.4rem,7vw,4.4rem)/1 var(--f-display);letter-spacing:-.0425em;margin:0 0 20px}
