@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="davidameth.dev">
+  <!--
+    El punto y la «d» de .dev, con el tallo cortado a 45°. Desde el rediseño
+    de 2026-09 va en la paleta nueva: pastilla en el grafito de la tinta
+    (#111318), letra en el plateado del suelo (#eef0f3) y el punto en el
+    acento del sitio, el mismo naranja que llevan los botones (5.99:1 sobre
+    el grafito).
+
+    La geometría es la de 2026-09-12, afinada para 16px: 3.5 unidades de
+    hueco entre punto y anillo (con menos se funden en una mancha), un solo
+    grueso de 8 en anillo y tallo, y el conjunto centrado.
+
+    La pastilla y no el fondo transparente porque un favicon se ve contra el
+    cromo del navegador: sobre barra clara el punto se perdería. En la barra
+    del sitio, en cambio, va sin pastilla (ver SitioLayout).
+  -->
+  <rect width="64" height="64" rx="12" fill="#111318"/>
+  <circle cx="14" cy="47" r="5.5" fill="#ff5b24"/>
+  <path fill="#eef0f3" fill-rule="evenodd" d="M36,20 A16,16 0 1,1 36,52 A16,16 0 1,1 36,20 Z M36,28 A8,8 0 1,0 36,44 A8,8 0 1,0 36,28 Z"/>
+  <path fill="#eef0f3" d="M47,20 L55,12 V52 H47 Z"/>
+</svg>
