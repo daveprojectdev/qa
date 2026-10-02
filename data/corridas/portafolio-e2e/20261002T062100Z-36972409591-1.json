@@ -1,0 +1,1201 @@
+{
+  "suite": "portafolio-e2e",
+  "fecha": "2026-10-02T06:20:58.572Z",
+  "resultado": "pasa",
+  "pasadas": 122,
+  "fallidas": 0,
+  "inestables": 0,
+  "omitidas": 26,
+  "duracion_s": 167,
+  "cobertura": null,
+  "commit": "56a274f",
+  "corrida": null,
+  "fallos": [],
+  "detalle": true,
+  "pruebas": [
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/ has no serious WCAG 2.1 AA violations (light)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 3107,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/ has no serious WCAG 2.1 AA violations (dark)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 2386,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/en/ has no serious WCAG 2.1 AA violations (light)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 2424,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/en/ has no serious WCAG 2.1 AA violations (dark)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 2310,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/experiencia/ has no serious WCAG 2.1 AA violations (light)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 2129,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/experiencia/ has no serious WCAG 2.1 AA violations (dark)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 2032,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/en/experience/ has no serious WCAG 2.1 AA violations (light)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 2115,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/en/experience/ has no serious WCAG 2.1 AA violations (dark)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 2133,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/proyectos/torneo/ has no serious WCAG 2.1 AA violations (light)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 3552,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/proyectos/torneo/ has no serious WCAG 2.1 AA violations (dark)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 3206,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/proyectos/biodiversidad/ has no serious WCAG 2.1 AA violations (light)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 2676,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/proyectos/biodiversidad/ has no serious WCAG 2.1 AA violations (dark)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 2561,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/proyectos/forbesverse/ has no serious WCAG 2.1 AA violations (light)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 3092,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/proyectos/forbesverse/ has no serious WCAG 2.1 AA violations (dark)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 2958,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/ has no serious WCAG 2.1 AA violations (light)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 2443,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/ has no serious WCAG 2.1 AA violations (dark)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 2316,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/en/ has no serious WCAG 2.1 AA violations (light)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 2301,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/en/ has no serious WCAG 2.1 AA violations (dark)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 2293,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/experiencia/ has no serious WCAG 2.1 AA violations (light)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 2083,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/experiencia/ has no serious WCAG 2.1 AA violations (dark)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 1998,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/en/experience/ has no serious WCAG 2.1 AA violations (light)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 2012,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/en/experience/ has no serious WCAG 2.1 AA violations (dark)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 2167,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/proyectos/torneo/ has no serious WCAG 2.1 AA violations (light)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 3399,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/proyectos/torneo/ has no serious WCAG 2.1 AA violations (dark)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 3216,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/proyectos/biodiversidad/ has no serious WCAG 2.1 AA violations (light)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 2558,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/proyectos/biodiversidad/ has no serious WCAG 2.1 AA violations (dark)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 2570,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/proyectos/forbesverse/ has no serious WCAG 2.1 AA violations (light)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 3055,
+      "error": null
+    },
+    {
+      "archivo": "accessibility.spec.ts",
+      "titulo": "/proyectos/forbesverse/ has no serious WCAG 2.1 AA violations (dark)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 3050,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "/ and /en/ › have the same sections, projects, jobs and certificates",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 647,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "/ and /en/ › declare each other as translations",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 729,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "/ and /en/ › have the same sections, projects, jobs and certificates",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 1,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "/ and /en/ › declare each other as translations",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "/experiencia/ and /en/experience/ › have the same sections, projects, jobs and certificates",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 566,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "/experiencia/ and /en/experience/ › declare each other as translations",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 602,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "/experiencia/ and /en/experience/ › have the same sections, projects, jobs and certificates",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "/experiencia/ and /en/experience/ › declare each other as translations",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "each language speaks its own › the renamed client reads «hoy» in Spanish and «now» in English",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 973,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "each language speaks its own › the language switch leads to the same page in the other language",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 894,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "each language speaks its own › the renamed client reads «hoy» in Spanish and «now» in English",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "each language speaks its own › the language switch leads to the same page in the other language",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "architecture pages, which exist in Spanish only › send an English reader back to the English home",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 893,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "architecture pages, which exist in Spanish only › send a Spanish reader back to the Spanish home",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 897,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "architecture pages, which exist in Spanish only › default to the Spanish home for a reader who arrives from outside",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 465,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "architecture pages, which exist in Spanish only › send an English reader back to the English home",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 907,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "architecture pages, which exist in Spanish only › send a Spanish reader back to the Spanish home",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 871,
+      "error": null
+    },
+    {
+      "archivo": "languages.spec.ts",
+      "titulo": "architecture pages, which exist in Spanish only › default to the Spanish home for a reader who arrives from outside",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 551,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the home bar carries the «.d» mark, named for screen readers",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 952,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "project captures are shown whole, never cropped",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 1050,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "links to the old section names still land on their section",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 980,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "architecture pages start below the floating bar",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 990,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the dark theme survives a reload and a change of page",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 2158,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "a reader who picked night in the previous design keeps it",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 597,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the home bar carries the «.d» mark, named for screen readers",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 650,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "project captures are shown whole, never cropped",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 687,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "links to the old section names still land on their section",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 908,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "architecture pages start below the floating bar",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 770,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the dark theme survives a reload and a change of page",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 753,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "a reader who picked night in the previous design keeps it",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 626,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the floating bar › stays one short row at every width, with no crowding",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 4170,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the floating bar › offers the menu on a phone and the section links on a wide screen",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 957,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the floating bar › stays one short row at every width, with no crowding",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 1729,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the floating bar › offers the menu on a phone and the section links on a wide screen",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 647,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the phone menu › opens onto its first link and closes with Escape, back to its button",
+      "proyecto": "desktop",
+      "estado": "omitida",
+      "ms": 1,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the phone menu › closes when a section is chosen",
+      "proyecto": "desktop",
+      "estado": "omitida",
+      "ms": 8,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the phone menu › opens onto its first link and closes with Escape, back to its button",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 1363,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the phone menu › closes when a section is chosen",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 1399,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the first screen › names David in full as the page heading (/)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 703,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the first screen › shows the call to action without scrolling (/)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 756,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the first screen › names David in full as the page heading (/en/)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 714,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the first screen › shows the call to action without scrolling (/en/)",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 831,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the first screen › names David in full as the page heading (/)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 496,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the first screen › shows the call to action without scrolling (/)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 519,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the first screen › names David in full as the page heading (/en/)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 471,
+      "error": null
+    },
+    {
+      "archivo": "layout.spec.ts",
+      "titulo": "the first screen › shows the call to action without scrolling (/en/)",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 527,
+      "error": null
+    },
+    {
+      "archivo": "links.spec.ts",
+      "titulo": "every internal link resolves, and every #anchor exists on its page",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 11953,
+      "error": null
+    },
+    {
+      "archivo": "links.spec.ts",
+      "titulo": "every external link answers",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 8626,
+      "error": null
+    },
+    {
+      "archivo": "links.spec.ts",
+      "titulo": "the email links open a message to the published address",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 651,
+      "error": null
+    },
+    {
+      "archivo": "links.spec.ts",
+      "titulo": "every internal link resolves, and every #anchor exists on its page",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "links.spec.ts",
+      "titulo": "every external link answers",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "links.spec.ts",
+      "titulo": "the email links open a message to the published address",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "an unknown address answers 404, not a blank 200",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 469,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "retired route /proyectos/ lands on /#proyectos",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 523,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "retired route /contacto/ lands on /#contacto",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 582,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "retired route /en/projects/ lands on /en/#projects",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 581,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "retired route /en/contact/ lands on /en/#contact",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 589,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "an unknown address answers 404, not a blank 200",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 389,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "retired route /proyectos/ lands on /#proyectos",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 534,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "retired route /contacto/ lands on /#contacto",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 475,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "retired route /en/projects/ lands on /en/#projects",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 483,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "retired route /en/contact/ lands on /en/#contact",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 480,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page / › loads cleanly, in its own language",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 1061,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page / › never scrolls sideways",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 510,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page / › loads cleanly, in its own language",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 945,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page / › never scrolls sideways",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 465,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /en/ › loads cleanly, in its own language",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 1024,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /en/ › never scrolls sideways",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 410,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /en/ › loads cleanly, in its own language",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 977,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /en/ › never scrolls sideways",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 422,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /experiencia/ › loads cleanly, in its own language",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 822,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /experiencia/ › never scrolls sideways",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 433,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /experiencia/ › loads cleanly, in its own language",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 877,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /experiencia/ › never scrolls sideways",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 411,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /en/experience/ › loads cleanly, in its own language",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 817,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /en/experience/ › never scrolls sideways",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 368,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /en/experience/ › loads cleanly, in its own language",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 871,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /en/experience/ › never scrolls sideways",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 395,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /proyectos/torneo/ › loads cleanly, in its own language",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 875,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /proyectos/torneo/ › never scrolls sideways",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 437,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /proyectos/torneo/ › loads cleanly, in its own language",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 932,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /proyectos/torneo/ › never scrolls sideways",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 469,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /proyectos/biodiversidad/ › loads cleanly, in its own language",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 872,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /proyectos/biodiversidad/ › never scrolls sideways",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 468,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /proyectos/biodiversidad/ › loads cleanly, in its own language",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 961,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /proyectos/biodiversidad/ › never scrolls sideways",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 481,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /proyectos/forbesverse/ › loads cleanly, in its own language",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 862,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /proyectos/forbesverse/ › never scrolls sideways",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 657,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /proyectos/forbesverse/ › loads cleanly, in its own language",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 936,
+      "error": null
+    },
+    {
+      "archivo": "pages.spec.ts",
+      "titulo": "page /proyectos/forbesverse/ › never scrolls sideways",
+      "proyecto": "mobile",
+      "estado": "pasa",
+      "ms": 449,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "/ declares its canonical address and a working social image",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 1126,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "/en/ declares its canonical address and a working social image",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 1350,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "/experiencia/ declares its canonical address and a working social image",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 582,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "/en/experience/ declares its canonical address and a working social image",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 616,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "/proyectos/torneo/ declares its canonical address and a working social image",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 778,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "/proyectos/biodiversidad/ declares its canonical address and a working social image",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 665,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "the es home describes its author as structured data",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 502,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "the en home describes its author as structured data",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 434,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "the sitemap lists exactly the published pages",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 331,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "/proyectos/forbesverse/ is readable by link and invisible to search",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 539,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "robots.txt allows crawling and points at the sitemap",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 196,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "llms.txt introduces the author to language models",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 226,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "every icon the browser and the home screen ask for exists",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 1528,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "/ declares its canonical address and a working social image",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 1,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "/en/ declares its canonical address and a working social image",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "/experiencia/ declares its canonical address and a working social image",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "/en/experience/ declares its canonical address and a working social image",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "/proyectos/torneo/ declares its canonical address and a working social image",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "/proyectos/biodiversidad/ declares its canonical address and a working social image",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "the es home describes its author as structured data",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "the en home describes its author as structured data",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "the sitemap lists exactly the published pages",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "/proyectos/forbesverse/ is readable by link and invisible to search",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "robots.txt allows crawling and points at the sitemap",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "llms.txt introduces the author to language models",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "seo.spec.ts",
+      "titulo": "every icon the browser and the home screen ask for exists",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "shortlinks.spec.ts",
+      "titulo": "short links point where the site's data says",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 5,
+      "error": null
+    },
+    {
+      "archivo": "shortlinks.spec.ts",
+      "titulo": "short links redirect on the live site",
+      "proyecto": "desktop",
+      "estado": "pasa",
+      "ms": 246,
+      "error": null
+    },
+    {
+      "archivo": "shortlinks.spec.ts",
+      "titulo": "short links point where the site's data says",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    },
+    {
+      "archivo": "shortlinks.spec.ts",
+      "titulo": "short links redirect on the live site",
+      "proyecto": "mobile",
+      "estado": "omitida",
+      "ms": 0,
+      "error": null
+    }
+  ]
+}
