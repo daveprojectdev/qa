@@ -10,13 +10,17 @@ Calidad, en vivo: el resultado de cada corrida de pruebas de mis proyectos, publ
 
 ## Cómo funciona
 
-1. Al terminar, el workflow de cada repo resume su informe (el JSON de Playwright o el JUnit y la cobertura de pytest) en un JSON pequeño.
-2. Lo sube aquí como un archivo nuevo, `data/corridas/<suite>/<fecha>-<corrida>.json`, con la API de contenidos de GitHub y un token de grano fino que solo puede escribir en este repo. Un archivo por corrida, para que dos suites que terminan a la vez nunca choquen.
-3. Cada subida es un commit, y Vercel vuelve a desplegar: `node build.mjs` arma `dist/` sin dependencias.
+1. **Al empezar**, cada suite sube un aviso a `data/en-curso/<suite>/<corrida>-<intento>.json` y la página la muestra en azul, «en ejecución». Al terminar lo borra, con `if: always()`: pase, falle o se cancele. Un aviso con más de dos horas se ignora, por si una corrida se cayó sin limpiarlo.
+2. **Al terminar**, el resultado se guarda como un archivo nuevo, `data/corridas/<suite>/<fecha>-<corrida>-<intento>.json`. Un archivo por corrida, para que dos suites que terminan a la vez nunca choquen.
+   - `portafolio-e2e` y `api-torneo` corren en sus propios repositorios: resumen su informe (el JSON de Playwright o el JUnit y la cobertura de pytest) y lo suben aquí con la API de contenidos de GitHub y un token de grano fino que solo puede escribir en este repo (`QA_TOKEN`).
+   - `red-dns` corre en este mismo repo ([`checks/red_dns.py`](checks/red_dns.py)) y hace commit con el `GITHUB_TOKEN` de la corrida.
+3. **Cada archivo es un commit**, y Vercel vuelve a desplegar: `node build.mjs` arma `dist/` sin dependencias, con una portada por idioma y una página por corrida.
+
+Las corridas anteriores al 2026-10-02 se importaron del historial de GitHub Actions con [`scripts/importar_historial.py`](scripts/importar_historial.py). De las que ya no tenían informe (Playwright lo guarda 14 días) solo queda el resultado, y se dibujan con rayas. Volver a correrlo no duplica nada: solo completa el detalle que falte.
 
 Los datos crudos están también en [`/estado.json`](https://qa.davidameth.dev/estado.json).
 
-El repo del portafolio es privado, así que sus corridas no llevan enlace: se publican las cifras y los títulos de las pruebas que fallen.
+El repo del portafolio es privado, así que sus corridas no llevan enlace: se publican las cifras y los títulos de las pruebas.
 
 ## Formato de una corrida
 
@@ -33,9 +37,25 @@ El repo del portafolio es privado, así que sus corridas no llevan enlace: se pu
   "cobertura": 99.4,
   "commit": "dfadcbb",
   "corrida": "https://github.com/daveprojectdev/api-torneo/actions/runs/…",
-  "fallos": []
+  "fallos": [],
+  "detalle": true,
+  "pruebas": [
+    {
+      "archivo": "tests/test_api.py",
+      "titulo": "test_equipos_en_orden_de_siembra",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 81,
+      "error": null
+    }
+  ]
 }
 ```
+
+- `resultado` es `pasa`, `falla` o `no-corrio` (el CI terminó en rojo antes de llegar a las pruebas; lleva `motivo` con el paso que falló).
+- `pruebas` trae cada prueba con su estado (`pasa`, `falla`, `inestable` u `omitida`); `proyecto` es `desktop` o `mobile` en las e2e.
+- `detalle: false` marca una corrida de la que solo queda el resultado; `importada: true`, una que vino del historial.
+- `estado.json` publica todo menos `pruebas`, que haría el archivo enorme: el detalle está en `data/corridas/`.
 
 ## Local
 
