@@ -1,0 +1,50 @@
+# Red y DNS de davidameth.dev, una vez al día. El repo es público, así que
+# GitHub Actions no cobra los minutos. Publica en este mismo repo, con el
+# GITHUB_TOKEN de la corrida: no hace falta el QA_TOKEN de las otras suites.
+name: Red y DNS
+
+on:
+  schedule:
+    - cron: "0 12 * * *" # 07:00 en Panamá (UTC-5)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["checks/red_dns.py", ".github/workflows/red-dns.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: red-dns
+  cancel-in-progress: false
+
+jobs:
+  red-dns:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Comprobar el dominio
+        run: python3 checks/red_dns.py > resumen.json && cat resumen.json | head -20
+
+      # Un archivo por corrida, como las demás suites. Las otras suites
+      # escriben aquí por la API mientras tanto, así que se rebasa antes de
+      # empujar y se reintenta.
+      - name: Publicar en qa.davidameth.dev
+        run: |
+          nombre="$(date -u +%Y%m%dT%H%M%SZ)-${{ github.run_id }}-${{ github.run_attempt }}.json"
+          mkdir -p data/corridas/red-dns
+          mv resumen.json "data/corridas/red-dns/$nombre"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/corridas/red-dns
+          git commit -m "red-dns: $(jq -r .resultado "data/corridas/red-dns/$nombre") (${{ github.run_id }})"
+          for i in 1 2 3; do
+            git pull --rebase -q && git push -q && break
+            [ "$i" = 3 ] && exit 1
+            sleep 5
+          done
+          # Ya publicado: si algo falló, la corrida queda en rojo, como las demás suites.
+          jq -e '.resultado == "pasa"' "data/corridas/red-dns/$nombre" > /dev/null || {
+            jq -r '.fallos[]' "data/corridas/red-dns/$nombre"; exit 1; }

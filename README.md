@@ -6,6 +6,7 @@ Calidad, en vivo: el resultado de cada corrida de pruebas de mis proyectos, publ
 | --- | --- | --- |
 | `portafolio-e2e` | Playwright contra [davidameth.dev](https://davidameth.dev): escritorio y teléfono, enlaces, SEO, paridad ES/EN y axe WCAG 2.1 AA | lunes, jueves y sábado, 06:00 (Panamá) |
 | `api-torneo` | pytest, Hypothesis, Schemathesis y oráculo contra [api.davidameth.dev](https://api.davidameth.dev) ([código](https://github.com/daveprojectdev/api-torneo)) | en cada push a `main` |
+| `red-dns` | El dominio desde fuera: DNSSEC, SPF, DMARC, CAA, certificados, http→https, HSTS y redirecciones ([`checks/red_dns.py`](checks/red_dns.py)) | todos los días, 07:00 (Panamá); publica con el `GITHUB_TOKEN` de este repo |
 
 ## Cómo funciona
 
