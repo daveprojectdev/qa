@@ -6,8 +6,8 @@
       "en": "Portfolio · e2e"
     },
     "que": {
-      "es": "Playwright contra davidameth.dev en producción, en escritorio (1440 px) y teléfono (375 px): páginas, enlaces, SEO, paridad español/inglés, tema y accesibilidad WCAG 2.1 AA con axe.",
-      "en": "Playwright against davidameth.dev in production, on desktop (1440 px) and phone (375 px): pages, links, SEO, Spanish/English parity, theme, and WCAG 2.1 AA accessibility with axe."
+      "es": "Playwright contra davidameth.dev en producción, en escritorio (1440 px) y teléfono (375 px): páginas, enlaces, SEO y datos estructurados, los archivos para modelos de IA (llms.txt), paridad español/inglés, tema y accesibilidad WCAG 2.1 AA con axe.",
+      "en": "Playwright against davidameth.dev in production, on desktop (1440 px) and phone (375 px): pages, links, SEO and structured data, the files for AI models (llms.txt), Spanish/English parity, theme, and WCAG 2.1 AA accessibility with axe."
     },
     "cuando": {
       "es": "lunes, jueves y sábado a las 06:00 (hora de Panamá).",
