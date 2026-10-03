@@ -10,7 +10,7 @@
 :root{
   --bg:#eef0f3;--nucleo:#fbfbfc;--tinta:#111318;--suave:#565c67;
   --linea:rgb(20 24 32 / .09);--bisel:rgb(20 24 32 / .045);--bisel-borde:rgb(20 24 32 / .06);
-  --acento:#ff5b24;--verde:#1f9d62;--verde-txt:#13764a;--rojo:#c8372d;--rojo-txt:#b42318;--gris:#9aa1ad;
+  --acento:#ff5b24;--verde:#1f9d62;--verde-txt:#13764a;--rojo:#c8372d;--rojo-txt:#b42318;--gris:#9aa1ad;--azul:#2f6fe0;--azul-txt:#1f56c2;
   --sombra:0 30px 60px -30px rgb(40 50 70 / .18),0 8px 24px -12px rgb(40 50 70 / .08);
   --f-display:"Schibsted Grotesk",system-ui,sans-serif;
   --f-texto:"Atkinson Hyperlegible Next",system-ui,sans-serif;
@@ -24,7 +24,7 @@
   :root:not([data-tema="claro"]){
     --bg:#0c0d10;--nucleo:#15171c;--tinta:#f1f2f4;--suave:#a2a8b3;
     --linea:rgb(255 255 255 / .09);--bisel:rgb(255 255 255 / .04);--bisel-borde:rgb(255 255 255 / .07);
-    --verde:#3ddc97;--verde-txt:#3ddc97;--rojo:#ff6b5e;--rojo-txt:#ff8a80;--gris:#5c626d;
+    --verde:#3ddc97;--verde-txt:#3ddc97;--rojo:#ff6b5e;--rojo-txt:#ff8a80;--gris:#5c626d;--azul:#5b9bff;--azul-txt:#8db9ff;
     --sombra:0 30px 60px -30px rgb(0 0 0 / .6);
     color-scheme:dark;
   }
@@ -32,7 +32,7 @@
 :root[data-tema="oscuro"]{
   --bg:#0c0d10;--nucleo:#15171c;--tinta:#f1f2f4;--suave:#a2a8b3;
   --linea:rgb(255 255 255 / .09);--bisel:rgb(255 255 255 / .04);--bisel-borde:rgb(255 255 255 / .07);
-  --verde:#3ddc97;--verde-txt:#3ddc97;--rojo:#ff6b5e;--rojo-txt:#ff8a80;--gris:#5c626d;
+  --verde:#3ddc97;--verde-txt:#3ddc97;--rojo:#ff6b5e;--rojo-txt:#ff8a80;--gris:#5c626d;--azul:#5b9bff;--azul-txt:#8db9ff;
   --sombra:0 30px 60px -30px rgb(0 0 0 / .6);
   color-scheme:dark;
 }
@@ -76,6 +76,8 @@ h2{font:800 1.625rem/1.15 var(--f-display);letter-spacing:-.03em;margin:0}
 .estado.falla{color:var(--rojo-txt)}.estado.falla i{background:var(--rojo)}
 .estado.vacio,.estado.no-corrio{color:var(--suave)}
 .estado.no-corrio i{background:var(--gris)}
+.estado.en-curso{color:var(--azul-txt)}.estado.en-curso i{background:var(--azul);animation:latido 1.6s ease-in-out infinite}
+.en-curso-meta{color:var(--azul-txt);font-weight:600}
 
 .cifras{display:flex;flex-wrap:wrap;gap:12px 32px;margin:20px 0}
 .cifras div{display:flex;flex-direction:column-reverse}
@@ -83,17 +85,26 @@ h2{font:800 1.625rem/1.15 var(--f-display);letter-spacing:-.03em;margin:0}
 .cifras dd{margin:0;font:800 2rem/1.1 var(--f-display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
 .cifras dd.mal{color:var(--rojo-txt)}
 
-/* El historial: cada barra es un enlace a su corrida. La que solo conserva
-   el resultado (`parcial`) va más clara; «no corrió» va en gris, para no
-   contarla como un fallo de pruebas. */
-.historial{display:flex;gap:3px;height:28px;margin:8px 0 6px}
-.historial a{flex:1;max-width:14px;border-radius:2px;transition:transform .15s}
+/* El historial, de la más reciente (izquierda) a la más antigua. Cada barra
+   es un enlace a su corrida y su color es su estado: azul que late mientras
+   corre, verde si pasó, rojo si falló, gris si no llegó a correr (no es un
+   fallo de pruebas). La que solo conserva el resultado (`parcial`) lleva
+   rayas dentro de la misma barra: antes iba más clara y no se entendía. La
+   última terminada lleva un anillo. */
+.linea-tiempo{display:inline-flex;flex-direction:column;min-width:240px;margin:8px 0 0}
+.historial{display:flex;gap:3px;height:28px;margin:0 0 4px}
+.historial>*{flex:0 0 14px;border-radius:2px;transition:transform .15s}
 .historial a:hover{transform:scaleY(1.15)}
 .historial a:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
 .pasa:is(a,i){background:var(--verde)}
 .falla:is(a,i){background:var(--rojo)}
 .no-corrio:is(a,i){background:var(--gris)}
-.parcial:is(a,i){opacity:.4}
+.historial .en-curso,.leyenda i.en-curso{background:var(--azul);animation:latido 1.6s ease-in-out infinite}
+.parcial:is(a,i){background-image:repeating-linear-gradient(-45deg,transparent 0 3px,var(--nucleo) 3px 5px)}
+.historial .ultima{box-shadow:0 0 0 2px var(--nucleo),0 0 0 3.5px var(--tinta)}
+@keyframes latido{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.historial .en-curso,.leyenda i.en-curso,.estado.en-curso i{animation:none}}
+.ejes{display:flex;justify-content:space-between;gap:12px;margin:0 0 10px;font-size:.78rem;color:var(--suave)}
 .leyenda{display:flex;flex-wrap:wrap;gap:4px 16px;margin:0 0 16px;font-size:.875rem;color:var(--suave)}
 .leyenda span{display:inline-flex;align-items:center;gap:6px}
 .leyenda i{width:9px;height:9px;border-radius:2px;display:inline-block}

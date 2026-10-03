@@ -35,6 +35,22 @@ function corridas(id) {
 }
 const DATOS = Object.fromEntries(suites.map((s) => [s.id, corridas(s.id)]));
 
+// Las corridas que están en marcha. El CI escribe un aviso al empezar en
+// data/en-curso/<suite>/ y lo borra al terminar, pase lo que pase. Si una
+// corrida se cae sin borrarlo, pasadas dos horas se ignora: no hay corrida de
+// estas suites que dure tanto, y un «en ejecución» eterno sería una mentira.
+const VIGENCIA_EN_CURSO = 2 * 60 * 60 * 1000;
+function enCurso(id) {
+  const dir = join(RAIZ, "data", "en-curso", id);
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir)
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => JSON.parse(readFileSync(join(dir, f), "utf8")))
+    .filter((r) => Date.now() - new Date(r.fecha).getTime() < VIGENCIA_EN_CURSO)
+    .sort((a, b) => b.fecha.localeCompare(a.fecha));
+}
+const EN_CURSO = Object.fromEntries(suites.map((s) => [s.id, enCurso(s.id)]));
+
 const T = {
   es: {
     lang: "es",
@@ -44,8 +60,8 @@ const T = {
     desc: "El resultado de cada corrida de pruebas de los proyectos de David Ameth Martínez Sánchez, publicado por el propio CI.",
     intro:
       "Cada vez que una de mis suites de pruebas termina, el CI publica aquí su resultado. Nadie edita esta página a mano: si algo falla, se ve.",
-    estado: { pasa: "Pasando", falla: "Fallando", "no-corrio": "No corrió" },
-    resultado: { pasa: "Pasó", falla: "Falló", "no-corrio": "No corrió" },
+    estado: { pasa: "Pasando", falla: "Fallando", "no-corrio": "No corrió", "en-curso": "En ejecución" },
+    resultado: { pasa: "Pasó", falla: "Falló", "no-corrio": "No corrió", "en-curso": "En ejecución" },
     prueba: { pasa: "pasó", falla: "falló", inestable: "inestable", omitida: "omitida" },
     sin: "Sin corridas todavía",
     ultima: "Última corrida",
@@ -55,16 +71,26 @@ const T = {
     omitidas: "omitidas",
     duracion: "duración",
     cobertura: "cobertura",
-    historial: (n) => `Últimas ${n} corridas. Cada barra lleva a su corrida.`,
-    leyenda: { pasa: "pasó", falla: "falló", "no-corrio": "no corrió", parcial: "más clara: solo queda el resultado" },
+    historial: (n) => `Últimas ${n} corridas, de la más reciente a la más antigua. Cada barra lleva a su corrida.`,
+    leyenda: {
+      "en-curso": "en ejecución",
+      pasa: "pasó",
+      falla: "falló",
+      "no-corrio": "no corrió",
+      parcial: "rayada: sin detalle, solo queda el resultado",
+    },
+    masReciente: "más reciente",
+    masAntigua: "más antigua",
+    ultimaTerminada: "Última terminada",
+    corriendoDesde: "Empezó",
     fallos: "Qué falló",
     verPruebas: (n) => `Ver las ${n} pruebas`,
     motivo: "Falló antes de las pruebas, en",
     sinDetalle:
       "De esta corrida solo queda el resultado: GitHub guarda el informe completo 14 días y este ya había vencido cuando se importó el historial.",
     importada: "Importada del historial de GitHub Actions.",
-    anterior: "Anterior",
-    siguiente: "Siguiente",
+    anterior: "Más antigua",
+    siguiente: "Más reciente",
     volverPortada: "Todas las suites",
     verObjetivo: "Ver lo que prueba",
     verCorrida: "Ver la corrida en GitHub",
@@ -86,8 +112,8 @@ const T = {
     desc: "The result of every test run of David Ameth Martínez Sánchez's projects, published by the CI itself.",
     intro:
       "Every time one of my test suites finishes, the CI publishes its result here. Nobody edits this page by hand: if something fails, it shows.",
-    estado: { pasa: "Passing", falla: "Failing", "no-corrio": "Didn't run" },
-    resultado: { pasa: "Passed", falla: "Failed", "no-corrio": "Didn't run" },
+    estado: { pasa: "Passing", falla: "Failing", "no-corrio": "Didn't run", "en-curso": "Running" },
+    resultado: { pasa: "Passed", falla: "Failed", "no-corrio": "Didn't run", "en-curso": "Running" },
     prueba: { pasa: "passed", falla: "failed", inestable: "flaky", omitida: "skipped" },
     sin: "No runs yet",
     ultima: "Latest run",
@@ -97,16 +123,26 @@ const T = {
     omitidas: "skipped",
     duracion: "duration",
     cobertura: "coverage",
-    historial: (n) => `Last ${n} runs. Each bar opens its run.`,
-    leyenda: { pasa: "passed", falla: "failed", "no-corrio": "didn't run", parcial: "lighter: only the result is left" },
+    historial: (n) => `Last ${n} runs, newest to oldest. Each bar opens its run.`,
+    leyenda: {
+      "en-curso": "running",
+      pasa: "passed",
+      falla: "failed",
+      "no-corrio": "didn't run",
+      parcial: "striped: no detail, only the result is left",
+    },
+    masReciente: "newest",
+    masAntigua: "oldest",
+    ultimaTerminada: "Latest finished",
+    corriendoDesde: "Started",
     fallos: "What failed",
     verPruebas: (n) => `See all ${n} tests`,
     motivo: "Failed before the tests, at",
     sinDetalle:
       "Only the result of this run is left: GitHub keeps the full report for 14 days, and this one had expired when the history was imported.",
     importada: "Imported from the GitHub Actions history.",
-    anterior: "Previous",
-    siguiente: "Next",
+    anterior: "Older",
+    siguiente: "Newer",
     volverPortada: "All suites",
     verObjetivo: "See what it tests",
     verCorrida: "See the run on GitHub",
@@ -210,10 +246,13 @@ function listaPruebas(pruebas, t) {
 const parcial = (r) => !r.detalle && r.resultado !== "no-corrio";
 
 function barras(s, lista, t) {
-  const recientes = lista.slice(-HISTORIAL);
-  if (!recientes.length) return "";
+  // De la más reciente a la más antigua, de izquierda a derecha, como se lee.
+  const corriendo = EN_CURSO[s.id];
+  const recientes = lista.slice(-HISTORIAL).reverse();
+  if (!recientes.length && !corriendo.length) return "";
   const hay = (f) => recientes.some(f);
   const leyenda = [
+    corriendo.length && `<span><i class="en-curso"></i>${t.leyenda["en-curso"]}</span>`,
     `<span><i class="pasa"></i>${t.leyenda.pasa}</span>`,
     hay((r) => r.resultado === "falla") && `<span><i class="falla"></i>${t.leyenda.falla}</span>`,
     hay((r) => r.resultado === "no-corrio") && `<span><i class="no-corrio"></i>${t.leyenda["no-corrio"]}</span>`,
@@ -221,20 +260,32 @@ function barras(s, lista, t) {
   ]
     .filter(Boolean)
     .join("");
-  return `<nav class="historial" aria-label="${esc(t.historial(recientes.length))}">
-        ${recientes
-          .map((r) => {
-            const texto = `${fecha(r.fecha, t)} · ${t.resultado[r.resultado]}${r.pasadas != null ? ` · ${r.pasadas} ${t.pasadas}, ${r.fallidas} ${t.fallidas}` : ""}`;
-            return `<a class="${r.resultado}${parcial(r) ? " parcial" : ""}" href="${rutaCorrida(s, r, t)}" title="${esc(texto)}" aria-label="${esc(texto)}"></a>`;
-          })
-          .join("")}
-      </nav>
+  const vivas = corriendo.map((r) => {
+    const texto = `${t.resultado["en-curso"]} · ${t.corriendoDesde} ${fecha(r.fecha, t)}`;
+    return r.corrida
+      ? `<a class="en-curso" href="${esc(r.corrida)}" title="${esc(texto)}" aria-label="${esc(texto)}"></a>`
+      : `<span class="en-curso" role="img" title="${esc(texto)}" aria-label="${esc(texto)}"></span>`;
+  });
+  const hechas = recientes.map((r, i) => {
+    const texto = `${fecha(r.fecha, t)} · ${t.resultado[r.resultado]}${r.pasadas != null ? ` · ${r.pasadas} ${t.pasadas}, ${r.fallidas} ${t.fallidas}` : ""}${parcial(r) ? ` · ${t.leyenda.parcial}` : ""}`;
+    const clases = [r.resultado, parcial(r) && "parcial", i === 0 && "ultima"].filter(Boolean);
+    return `<a class="${clases.join(" ")}" href="${rutaCorrida(s, r, t)}" title="${esc(texto)}" aria-label="${esc(texto)}"></a>`;
+  });
+  // Las etiquetas de los extremos miden lo mismo que la fila de barras: con
+  // pocas corridas, «más antigua» tiene que quedar bajo la última barra.
+  return `<div class="linea-tiempo">
+        <nav class="historial" aria-label="${esc(t.historial(recientes.length + corriendo.length))}">
+          ${[...vivas, ...hechas].join("")}
+        </nav>
+        <p class="ejes" aria-hidden="true"><span>← ${t.masReciente}</span><span>${t.masAntigua} →</span></p>
+      </div>
       <p class="leyenda">${leyenda}</p>`;
 }
 
 function tarjeta(s, t, idioma) {
   const lista = DATOS[s.id];
   const u = lista.at(-1);
+  const corriendo = EN_CURSO[s.id][0];
 
   const fallos =
     u && u.fallos?.length
@@ -254,10 +305,11 @@ function tarjeta(s, t, idioma) {
   return `<article class="bisel"><div class="placa">
     <header class="cabeza">
       <h2>${esc(s.nombre[idioma])}</h2>
-      ${u ? chipEstado(u.resultado, t) : `<span class="estado vacio">${t.sin}</span>`}
+      ${corriendo ? chipEstado("en-curso", t) : u ? chipEstado(u.resultado, t) : `<span class="estado vacio">${t.sin}</span>`}
     </header>
     <p class="que">${esc(s.que[idioma])}</p>
-    ${u ? `<p class="meta">${t.ultima}: <a href="${rutaCorrida(s, u, t)}"><time datetime="${u.fecha}" data-relativa>${fecha(u.fecha, t)}</time></a>${u.commit ? ` · <code>${esc(u.commit)}</code>` : ""}</p>` : ""}
+    ${corriendo ? `<p class="meta en-curso-meta">${t.estado["en-curso"]} · ${t.corriendoDesde} <time datetime="${corriendo.fecha}" data-relativa>${fecha(corriendo.fecha, t)}</time></p>` : ""}
+    ${u ? `<p class="meta">${corriendo ? t.ultimaTerminada : t.ultima}: <a href="${rutaCorrida(s, u, t)}"><time datetime="${u.fecha}" data-relativa>${fecha(u.fecha, t)}</time></a>${u.commit ? ` · <code>${esc(u.commit)}</code>` : ""}</p>` : ""}
     ${u?.resultado === "no-corrio" ? `<p class="meta">${t.motivo} «${esc(u.motivo)}».</p>` : ""}
     ${cifras(u, t)}
     ${barras(s, lista, t)}
@@ -289,8 +341,8 @@ function paginaCorrida(s, i, t, idioma) {
     ${r.corrida ? `<p class="enlaces"><a href="${esc(r.corrida)}">${t.verCorrida}</a></p>` : ""}
   </div></article>
   <nav class="pasos">
-    ${ant ? `<a href="${rutaCorrida(s, ant, t)}">← ${t.anterior}</a>` : "<span></span>"}
-    ${sig ? `<a href="${rutaCorrida(s, sig, t)}">${t.siguiente} →</a>` : "<span></span>"}
+    ${sig ? `<a href="${rutaCorrida(s, sig, t)}">← ${t.siguiente}</a>` : "<span></span>"}
+    ${ant ? `<a href="${rutaCorrida(s, ant, t)}">${t.anterior} →</a>` : "<span></span>"}
   </nav>`;
   const otra = T[idioma === "es" ? "en" : "es"];
   return documento({
