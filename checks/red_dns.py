@@ -55,12 +55,14 @@ def doh(nombre: str, tipo: str, resolutor: str = "Google") -> dict:
 def respuestas(nombre: str, tipo: str) -> list[str]:
     codigo = {"A": 1, "CNAME": 5, "MX": 15, "TXT": 16, "AAAA": 28, "DS": 43, "CAA": 257}[tipo]
     datos = doh(nombre, tipo)
-    return [a["data"].strip('"') for a in datos.get("Answer", []) if a["type"] == codigo]
+    # Tal cual llega: un CAA es `0 issue "letsencrypt.org"` y sus comillas son
+    # parte del valor. Solo a los TXT se les quitan (en `txt`).
+    return [a["data"] for a in datos.get("Answer", []) if a["type"] == codigo]
 
 
 def txt(nombre: str) -> list[str]:
     # Un TXT largo llega partido en cadenas "a" "b"; se unen.
-    return [v.replace('" "', "") for v in respuestas(nombre, "TXT")]
+    return [v.strip('"').replace('" "', "") for v in respuestas(nombre, "TXT")]
 
 
 # ------------------------------------------------------------ comprobaciones
@@ -137,6 +139,27 @@ def caa_letsencrypt() -> None:
         raise Fallo(f"ningún CAA autoriza a Let's Encrypt, la que usa Vercel: {caa or 'sin CAA'}")
 
 
+def emisores(caa: list[str]) -> set[str]:
+    """Las autoridades que autoriza un conjunto de CAA (`0 issue "x"` → x)."""
+    return {c.split('"')[1] for c in caa if ' issue "' in c and c.split('"')[1]}
+
+
+def caa_igual_a_vercel() -> None:
+    # Vercel publica en el destino de sus CNAME las autoridades con las que
+    # puede emitir, Let's Encrypt y sus respaldos. El CAA del dominio principal
+    # tiene que autorizar exactamente esas: una de menos rompe una renovación
+    # de respaldo, y una de más (o mal escrita: el 2026-10-02 entró
+    # «section.com» por «sectigo.com») abre la puerta a quien no hace falta.
+    destino = respuestas(f"api.{DOMINIO}", "CNAME")
+    if not destino:
+        raise Fallo("no se pudo leer el destino de Vercel para comparar")
+    de_vercel = emisores(respuestas(destino[0].rstrip("."), "CAA"))
+    propios = emisores(respuestas(DOMINIO, "CAA"))
+    if propios != de_vercel:
+        faltan, sobran = sorted(de_vercel - propios), sorted(propios - de_vercel)
+        raise Fallo(f"el CAA no coincide con el de Vercel; faltan {faltan or 'ninguna'}, sobran {sobran or 'ninguna'}")
+
+
 def caa_sin_comodines() -> None:
     caa = respuestas(DOMINIO, "CAA")
     if not any('issuewild ";"' in c for c in caa):
@@ -209,6 +232,7 @@ PRUEBAS: list[tuple[str, str, Callable[[], None]]] = [
     ("correo", "DMARC pide informes (rua)", dmarc_informa),
     ("correo", "MX apunta al reenvío de Spaceship", mx_reenvio),
     ("certificados", "CAA autoriza a Let's Encrypt", caa_letsencrypt),
+    ("certificados", "CAA autoriza exactamente a las autoridades de Vercel", caa_igual_a_vercel),
     ("certificados", "CAA prohíbe certificados comodín", caa_sin_comodines),
     *(("certificados", f"{h}: certificado válido y con más de {DIAS_MINIMOS} días", certificado(h)) for h in HOSTS),
     *(("http", f"http://{h} redirige a https", http_a_https(h)) for h in HOSTS),
