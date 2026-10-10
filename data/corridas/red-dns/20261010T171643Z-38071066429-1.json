@@ -1,0 +1,289 @@
+{
+  "suite": "red-dns",
+  "fecha": "2026-10-10T17:16:43Z",
+  "resultado": "pasa",
+  "pasadas": 34,
+  "fallidas": 0,
+  "inestables": 0,
+  "omitidas": 0,
+  "duracion_s": 6,
+  "cobertura": null,
+  "commit": "2e7cfa8",
+  "corrida": "https://github.com/daveprojectdev/qa/actions/runs/38071066429",
+  "fallos": [],
+  "detalle": true,
+  "pruebas": [
+    {
+      "archivo": "dns",
+      "titulo": "DNSSEC: la zona padre publica el registro DS",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 90,
+      "error": null
+    },
+    {
+      "archivo": "dns",
+      "titulo": "DNSSEC: Google valida la firma",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 50,
+      "error": null
+    },
+    {
+      "archivo": "dns",
+      "titulo": "DNSSEC: Cloudflare valida la firma",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 301,
+      "error": null
+    },
+    {
+      "archivo": "dns",
+      "titulo": "davidameth.dev resuelve hacia Vercel",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 137,
+      "error": null
+    },
+    {
+      "archivo": "dns",
+      "titulo": "www.davidameth.dev resuelve hacia Vercel",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 42,
+      "error": null
+    },
+    {
+      "archivo": "dns",
+      "titulo": "torneo.davidameth.dev resuelve hacia Vercel",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 61,
+      "error": null
+    },
+    {
+      "archivo": "dns",
+      "titulo": "api.davidameth.dev resuelve hacia Vercel",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 139,
+      "error": null
+    },
+    {
+      "archivo": "dns",
+      "titulo": "qa.davidameth.dev resuelve hacia Vercel",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 49,
+      "error": null
+    },
+    {
+      "archivo": "dns",
+      "titulo": "Sin AAAA en el dominio principal (Vercel no admite IPv6)",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 35,
+      "error": null
+    },
+    {
+      "archivo": "correo",
+      "titulo": "Un solo registro SPF",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 37,
+      "error": null
+    },
+    {
+      "archivo": "correo",
+      "titulo": "El SPF termina en ~all o -all",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 48,
+      "error": null
+    },
+    {
+      "archivo": "correo",
+      "titulo": "DMARC publicado",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 54,
+      "error": null
+    },
+    {
+      "archivo": "correo",
+      "titulo": "DMARC pide informes (rua)",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 63,
+      "error": null
+    },
+    {
+      "archivo": "correo",
+      "titulo": "MX apunta al reenvío de Spaceship",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 29,
+      "error": null
+    },
+    {
+      "archivo": "certificados",
+      "titulo": "CAA autoriza a Let's Encrypt",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 35,
+      "error": null
+    },
+    {
+      "archivo": "certificados",
+      "titulo": "CAA autoriza exactamente a las autoridades de Vercel",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 195,
+      "error": null
+    },
+    {
+      "archivo": "certificados",
+      "titulo": "CAA prohíbe certificados comodín",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 150,
+      "error": null
+    },
+    {
+      "archivo": "certificados",
+      "titulo": "davidameth.dev: certificado válido y con más de 20 días",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 239,
+      "error": null
+    },
+    {
+      "archivo": "certificados",
+      "titulo": "www.davidameth.dev: certificado válido y con más de 20 días",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 389,
+      "error": null
+    },
+    {
+      "archivo": "certificados",
+      "titulo": "torneo.davidameth.dev: certificado válido y con más de 20 días",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 313,
+      "error": null
+    },
+    {
+      "archivo": "certificados",
+      "titulo": "api.davidameth.dev: certificado válido y con más de 20 días",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 304,
+      "error": null
+    },
+    {
+      "archivo": "certificados",
+      "titulo": "qa.davidameth.dev: certificado válido y con más de 20 días",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 329,
+      "error": null
+    },
+    {
+      "archivo": "http",
+      "titulo": "http://davidameth.dev redirige a https",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 36,
+      "error": null
+    },
+    {
+      "archivo": "http",
+      "titulo": "http://www.davidameth.dev redirige a https",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 119,
+      "error": null
+    },
+    {
+      "archivo": "http",
+      "titulo": "http://torneo.davidameth.dev redirige a https",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 93,
+      "error": null
+    },
+    {
+      "archivo": "http",
+      "titulo": "http://api.davidameth.dev redirige a https",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 82,
+      "error": null
+    },
+    {
+      "archivo": "http",
+      "titulo": "http://qa.davidameth.dev redirige a https",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 23,
+      "error": null
+    },
+    {
+      "archivo": "http",
+      "titulo": "davidameth.dev: HSTS de al menos un año",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 151,
+      "error": null
+    },
+    {
+      "archivo": "http",
+      "titulo": "www.davidameth.dev: HSTS de al menos un año",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 125,
+      "error": null
+    },
+    {
+      "archivo": "http",
+      "titulo": "torneo.davidameth.dev: HSTS de al menos un año",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 294,
+      "error": null
+    },
+    {
+      "archivo": "http",
+      "titulo": "api.davidameth.dev: HSTS de al menos un año",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 1491,
+      "error": null
+    },
+    {
+      "archivo": "http",
+      "titulo": "qa.davidameth.dev: HSTS de al menos un año",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 268,
+      "error": null
+    },
+    {
+      "archivo": "http",
+      "titulo": "www redirige al dominio principal",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 112,
+      "error": null
+    },
+    {
+      "archivo": "http",
+      "titulo": "El .vercel.app viejo del torneo redirige a torneo.davidameth.dev",
+      "proyecto": null,
+      "estado": "pasa",
+      "ms": 71,
+      "error": null
+    }
+  ]
+}
