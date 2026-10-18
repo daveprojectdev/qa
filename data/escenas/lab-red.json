@@ -1,0 +1,305 @@
+{
+ "flujos": [
+  {
+   "de": "pc-suc1",
+   "a": "srv",
+   "saltos": [
+    "pc-suc1",
+    "suc1",
+    "sede",
+    "cpd",
+    "srv"
+   ],
+   "ips": [
+    "10.1.1.1",
+    "10.254.0.2",
+    "10.254.0.1",
+    "10.10.10.10"
+   ]
+  },
+  {
+   "de": "pc-suc2",
+   "a": "srv",
+   "saltos": [
+    "pc-suc2",
+    "suc2",
+    "sede",
+    "cpd",
+    "srv"
+   ],
+   "ips": [
+    "10.1.2.1",
+    "10.254.0.6",
+    "10.254.0.1",
+    "10.10.10.10"
+   ]
+  },
+  {
+   "de": "pc-suc1",
+   "a": "web",
+   "saltos": [
+    "pc-suc1",
+    "suc1",
+    "sede",
+    "isp1",
+    "nube",
+    "web"
+   ],
+   "ips": [
+    "10.1.1.1",
+    "10.254.0.2",
+    "100.64.1.0",
+    "100.64.11.1",
+    "203.0.113.10"
+   ]
+  },
+  {
+   "de": "srv",
+   "a": "web",
+   "saltos": [
+    "srv",
+    "cpd",
+    "sede",
+    "isp1",
+    "nube",
+    "web"
+   ],
+   "ips": [
+    "10.10.10.1",
+    "10.254.0.0",
+    "100.64.1.0",
+    "100.64.11.1",
+    "203.0.113.10"
+   ]
+  }
+ ],
+ "cortes": [
+  {
+   "enlace": "el enlace principal de la sucursal 1 (sede–suc1)",
+   "router": "sede",
+   "interfaz": "eth2",
+   "de": "pc-suc1",
+   "a": "srv",
+   "antes": [
+    "pc-suc1",
+    "suc1",
+    "sede",
+    "cpd",
+    "srv"
+   ],
+   "perdida_s": 0.0,
+   "perdidos": 0,
+   "despues": [
+    "pc-suc1",
+    "suc1",
+    "cpd",
+    "srv"
+   ],
+   "vuelta_s": 19,
+   "repuesto": [
+    "pc-suc1",
+    "suc1",
+    "sede",
+    "cpd",
+    "srv"
+   ]
+  },
+  {
+   "enlace": "el enlace a isp1, la salida principal a internet (sede–isp1)",
+   "router": "sede",
+   "interfaz": "eth6",
+   "de": "pc-suc1",
+   "a": "web",
+   "antes": [
+    "pc-suc1",
+    "suc1",
+    "sede",
+    "isp1",
+    "nube",
+    "web"
+   ],
+   "perdida_s": 0.2,
+   "perdidos": 2,
+   "despues": [
+    "pc-suc1",
+    "suc1",
+    "sede",
+    "cpd",
+    "isp2",
+    "nube",
+    "web"
+   ],
+   "vuelta_s": 11,
+   "repuesto": [
+    "pc-suc1",
+    "suc1",
+    "sede",
+    "isp1",
+    "nube",
+    "web"
+   ]
+  }
+ ],
+ "bloqueos": [
+  {
+   "de": "pc-suc1",
+   "a": "admin",
+   "paso": false,
+   "esperado": false,
+   "respuesta": "3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2083ms"
+  },
+  {
+   "de": "pc-suc2",
+   "a": "admin",
+   "paso": false,
+   "esperado": false,
+   "respuesta": "3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2082ms"
+  },
+  {
+   "de": "web",
+   "a": "admin",
+   "paso": false,
+   "esperado": false,
+   "respuesta": "3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2082ms"
+  },
+  {
+   "de": "pc-sede",
+   "a": "admin",
+   "paso": true,
+   "esperado": true,
+   "respuesta": "rtt min/avg/max/mdev = 0.032/0.043/0.063/0.014 ms"
+  },
+  {
+   "de": "srv",
+   "a": "admin",
+   "paso": true,
+   "esperado": true,
+   "respuesta": "rtt min/avg/max/mdev = 0.027/0.049/0.083/0.024 ms"
+  }
+ ],
+ "ataques": [
+  {
+   "intento": "entrar a la red de gestión",
+   "de": "hacker",
+   "a": "admin",
+   "puerto": null,
+   "paso": false,
+   "esperado": false,
+   "detalle": "3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2028ms"
+  },
+  {
+   "intento": "llegar a una computadora de la sucursal 1",
+   "de": "hacker",
+   "a": "pc-suc1",
+   "puerto": null,
+   "paso": false,
+   "esperado": false,
+   "detalle": "3 packets transmitted, 0 received, 100% packet loss, time 2083ms"
+  },
+  {
+   "intento": "hacer ping a los servidores",
+   "de": "hacker",
+   "a": "srv",
+   "puerto": null,
+   "paso": false,
+   "esperado": false,
+   "detalle": "3 packets transmitted, 0 received, 100% packet loss, time 2043ms"
+  },
+  {
+   "intento": "abrir el puerto 80 de los servidores",
+   "de": "hacker",
+   "a": "srv",
+   "puerto": 80,
+   "paso": false,
+   "esperado": false,
+   "detalle": "puerto 80 cerrado o filtrado"
+  },
+  {
+   "intento": "abrir el puerto 443 de los servidores (el servicio público)",
+   "de": "hacker",
+   "a": "srv",
+   "puerto": 443,
+   "paso": true,
+   "esperado": true,
+   "detalle": "puerto 443 abierto"
+  },
+  {
+   "intento": "abrir el servidor autorizador",
+   "de": "hacker",
+   "a": "autorizador",
+   "puerto": 443,
+   "paso": false,
+   "esperado": false,
+   "detalle": "puerto 443 cerrado o filtrado"
+  },
+  {
+   "intento": "disfrazarse de la sucursal 1",
+   "de": "hacker",
+   "a": "srv",
+   "puerto": null,
+   "paso": false,
+   "esperado": false,
+   "frenados_en_el_borde": 3
+  }
+ ],
+ "socio": [
+  {
+   "intento": "cajeros → autorizador",
+   "de": "cajeros",
+   "a": "autorizador",
+   "puerto": 443,
+   "paso": true,
+   "esperado": true,
+   "detalle": "puerto 443 abierto"
+  },
+  {
+   "intento": "cajeros → autorizador",
+   "de": "cajeros",
+   "a": "autorizador",
+   "puerto": 80,
+   "paso": false,
+   "esperado": false,
+   "detalle": "puerto 80 cerrado o filtrado"
+  },
+  {
+   "intento": "cajeros → srv",
+   "de": "cajeros",
+   "a": "srv",
+   "puerto": 443,
+   "paso": false,
+   "esperado": false,
+   "detalle": "puerto 443 cerrado o filtrado"
+  },
+  {
+   "intento": "cajeros → admin",
+   "de": "cajeros",
+   "a": "admin",
+   "puerto": null,
+   "paso": false,
+   "esperado": false,
+   "detalle": "3 packets transmitted, 0 received, +1 errors, 100% packet loss, time 2083ms"
+  },
+  {
+   "intento": "cajeros → pc-suc1",
+   "de": "cajeros",
+   "a": "pc-suc1",
+   "puerto": null,
+   "paso": false,
+   "esperado": false,
+   "detalle": "3 packets transmitted, 0 received, 100% packet loss, time 2042ms"
+  },
+  {
+   "intento": "pc-suc1 → cajeros",
+   "de": "pc-suc1",
+   "a": "cajeros",
+   "puerto": null,
+   "paso": false,
+   "esperado": false,
+   "detalle": "3 packets transmitted, 0 received, 100% packet loss, time 2042ms"
+  }
+ ],
+ "convergencia_s": 19,
+ "fecha": "2026-10-18T04:17:28Z",
+ "commit": "acc3c32",
+ "resultado": "pasa"
+}
