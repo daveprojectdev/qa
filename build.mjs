@@ -458,6 +458,9 @@ function escribir(ruta, html) {
 rmSync(SALIDA, { recursive: true, force: true });
 mkdirSync(SALIDA, { recursive: true });
 cpSync(join(RAIZ, "public"), SALIDA, { recursive: true });
+// La escena de la última corrida de cada suite que la publique (por ahora, el
+// lab de red): los caminos medidos que dibuja la vista de davidameth.dev.
+if (existsSync(join(RAIZ, "data", "escenas"))) cpSync(join(RAIZ, "data", "escenas"), join(SALIDA, "escenas"), { recursive: true });
 let paginas = 0;
 for (const idioma of ["es", "en"]) {
   const t = T[idioma];

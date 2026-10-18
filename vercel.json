@@ -4,6 +4,7 @@
   "framework": null,
   "cleanUrls": true,
   "headers": [
-    { "source": "/estado.json", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] }
+    { "source": "/estado.json", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] },
+    { "source": "/escenas/(.*)", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }, { "key": "Cache-Control", "value": "public, max-age=300" }] }
   ]
 }
