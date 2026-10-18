@@ -99,7 +99,7 @@ const T = {
     como: "Cómo funciona",
     comoTexto: [
       "Al empezar, cada suite deja aquí un aviso y su barra se ve en azul. Al terminar, publica su resultado y quita el aviso, haya pasado, fallado o se haya cancelado.",
-      "Las pruebas del portafolio y de la API corren en sus propios repositorios: al terminar resumen su informe (el JSON de Playwright o el JUnit de pytest) y lo suben a este con un token que solo puede escribir aquí. La de red y DNS corre en este mismo repositorio y consulta el dominio desde fuera, como lo vería cualquiera.",
+      "Las pruebas del portafolio, de la API y del lab de red corren en sus propios repositorios: al terminar resumen su informe (el JSON de Playwright, el JUnit de pytest o el resumen del lab) y lo suben a este con un token que solo puede escribir aquí. El lab sube además la escena de la corrida, que dibuja la vista 3D de davidameth.dev. La de red y DNS corre en este mismo repositorio y consulta el dominio desde fuera, como lo vería cualquiera.",
       "Cada resultado es un archivo nuevo y cada archivo despliega la página otra vez. Las corridas anteriores al 2 de octubre de 2026 se importaron del historial de GitHub Actions; de las que ya no tenían informe solo queda el resultado, y por eso sus barras van rayadas.",
     ],
     datosCrudos: "Los datos crudos están en",
@@ -155,7 +155,7 @@ const T = {
     como: "How it works",
     comoTexto: [
       "When a suite starts, it leaves a notice here and its bar shows in blue. When it finishes, it publishes its result and removes the notice, whether it passed, failed, or was canceled.",
-      "The portfolio and API tests run in their own repositories: when they finish, they summarize their report (Playwright JSON or pytest JUnit) and upload it to this one with a token that can only write here. The network and DNS suite runs in this same repository and checks the domain from the outside, the way anyone would see it.",
+      "The portfolio, API, and network lab tests run in their own repositories: when they finish, they summarize their report (Playwright JSON, pytest JUnit, or the lab’s summary) and upload it to this one with a token that can only write here. The lab also uploads the run’s scene, which draws the 3D view on davidameth.dev. The network and DNS suite runs in this same repository and checks the domain from the outside, the way anyone would see it.",
       "Every result is a new file, and every file redeploys the page. Runs before October 2, 2026 were imported from the GitHub Actions history; for the ones whose report had already expired, only the result is left, which is why their bars are striped.",
     ],
     datosCrudos: "The raw data is at",
