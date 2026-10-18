@@ -1,0 +1,201 @@
+{
+ "suite": "lab-red",
+ "fecha": "2026-10-18T01:14:44Z",
+ "resultado": "pasa",
+ "pasadas": 23,
+ "fallidas": 0,
+ "inestables": 0,
+ "omitidas": 0,
+ "duracion_s": 43,
+ "cobertura": null,
+ "commit": "08825ae",
+ "corrida": "https://github.com/daveprojectdev/lab-red-banco/actions/runs/39085713512",
+ "fallos": [],
+ "detalle": true,
+ "pruebas": [
+  {
+   "archivo": "ospf",
+   "titulo": "OSPF converge en menos de 120 s (tardó 20 s)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "ospf",
+   "titulo": "sede: sus 3 vecinos en Full, cada uno por su enlace",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 44,
+   "error": null
+  },
+  {
+   "archivo": "ospf",
+   "titulo": "cpd: sus 3 vecinos en Full, cada uno por su enlace",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 43,
+   "error": null
+  },
+  {
+   "archivo": "ospf",
+   "titulo": "suc1: sus 2 vecinos en Full, cada uno por su enlace",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 43,
+   "error": null
+  },
+  {
+   "archivo": "ospf",
+   "titulo": "suc2: sus 2 vecinos en Full, cada uno por su enlace",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 44,
+   "error": null
+  },
+  {
+   "archivo": "rutas",
+   "titulo": "sede aprende por OSPF las redes de los demás",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 43,
+   "error": null
+  },
+  {
+   "archivo": "rutas",
+   "titulo": "cpd aprende por OSPF las redes de los demás",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 46,
+   "error": null
+  },
+  {
+   "archivo": "rutas",
+   "titulo": "suc1 aprende por OSPF las redes de los demás",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 42,
+   "error": null
+  },
+  {
+   "archivo": "rutas",
+   "titulo": "suc2 aprende por OSPF las redes de los demás",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 43,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "la sucursal 1 llega a los servidores por la sede, no por el respaldo",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 45,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "la sucursal 2 llega a los servidores por la sede, no por el respaldo",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 44,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "el centro de datos responde a la sucursal 1 por la sede",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 45,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "el centro de datos responde a la sucursal 2 por la sede",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 45,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "entre sucursales se pasa por la sede",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 44,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "traceroute de la sucursal 1 a los servidores: suc1 → sede → cpd",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 32,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "traceroute de la sucursal 2 a los servidores: suc2 → sede → cpd",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 31,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "pc-suc1 llega a srv (10.10.10.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2087,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "pc-suc2 llega a srv (10.10.10.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "pc-sede llega a srv (10.10.10.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "pc-suc1 llega a pc-suc2 (10.1.2.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "pc-suc2 llega a pc-sede (10.0.1.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "srv llega a pc-suc1 (10.1.1.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "admin llega a srv (10.10.10.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  }
+ ]
+}
