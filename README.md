@@ -7,6 +7,7 @@ Calidad, en vivo: el resultado de cada corrida de pruebas de mis proyectos, publ
 | `portafolio-e2e` | Playwright contra [davidameth.dev](https://davidameth.dev): escritorio y teléfono, enlaces, SEO y datos estructurados, `llms.txt`, paridad ES/EN y axe WCAG 2.1 AA | lunes, jueves y sábado, 06:00 (Panamá) |
 | `api-torneo` | pytest, Hypothesis, Schemathesis y oráculo contra [api.davidameth.dev](https://api.davidameth.dev) ([código](https://github.com/daveprojectdev/api-torneo)) | en cada push a `main` |
 | `red-dns` | El dominio desde fuera: DNSSEC, SPF, DMARC, CAA, certificados, http→https, HSTS y redirecciones ([`checks/red_dns.py`](checks/red_dns.py)) | todos los días, 07:00 (Panamá); publica con el `GITHUB_TOKEN` de este repo |
+| `lab-red` | Containerlab con la red de un banco: configuraciones, rutas, caminos del tráfico, cortes de enlace, ataques y la red de cajeros ([código](https://github.com/daveprojectdev/lab-red-banco/blob/main/pruebas/probar.py)) | en cada push a `main` y los lunes, 06:00 (Panamá) |
 
 ## Cómo funciona
 

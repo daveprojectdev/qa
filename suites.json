@@ -57,8 +57,8 @@
       "en": "Network lab"
     },
     "que": {
-      "es": "Containerlab levanta la red de un banco (sede, centro de datos, dos sucursales y dos proveedores de internet, con OSPF y BGP en FRRouting). Primero revisa las configuraciones; después comprueba las rutas, el camino del tráfico y la regla de acceso a la red de gestión, y corta enlaces para medir cuánto tarda en pasar al respaldo.",
-      "en": "Containerlab spins up a bank's network (headquarters, data center, two branches, and two internet providers, with OSPF and BGP on FRRouting). It first checks the configurations, then verifies routes, traffic paths, and the access rule for the management network, and cuts links to measure how long failover to the backup takes."
+      "es": "Containerlab levanta la red de un banco (sede, centro de datos, dos sucursales, dos proveedores de internet y una red de cajeros, con OSPF y BGP en FRRouting). Primero revisa las configuraciones; después comprueba las rutas, el camino del tráfico y la regla de acceso a la red de gestión, y corta enlaces para medir cuánto tarda en pasar al respaldo y deja que un hacker intente entrar.",
+      "en": "Containerlab spins up a bank's network (headquarters, data center, two branches, two internet providers, and an ATM network, with OSPF and BGP on FRRouting). It first checks the configurations, then verifies routes, traffic paths, and the access rule for the management network, cuts links to measure how long failover to the backup takes, and lets a hacker try to break in."
     },
     "cuando": {
       "es": "en cada push a main y los lunes a las 06:00 (hora de Panamá).",
