@@ -1,0 +1,617 @@
+{
+ "suite": "lab-red",
+ "fecha": "2026-10-18T04:17:28Z",
+ "resultado": "pasa",
+ "pasadas": 75,
+ "fallidas": 0,
+ "inestables": 0,
+ "omitidas": 0,
+ "duracion_s": 195,
+ "cobertura": null,
+ "commit": "acc3c32",
+ "corrida": "https://github.com/daveprojectdev/lab-red-banco/actions/runs/39096370322",
+ "fallos": [],
+ "detalle": true,
+ "pruebas": [
+  {
+   "archivo": "configuracion",
+   "titulo": "Ninguna dirección IP está repetida",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "configuracion",
+   "titulo": "Cada router tiene un router-id único, igual a su loopback",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "configuracion",
+   "titulo": "Cada enlace punto a punto tiene exactamente dos puntas, en routers distintos",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "configuracion",
+   "titulo": "OSPF igual en las dos puntas de cada enlace: área, costo y tipo",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "configuracion",
+   "titulo": "Las redes locales están en OSPF como pasivas",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "configuracion",
+   "titulo": "Cada vecino BGP existe, tiene el AS esperado y responde de vuelta",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "configuracion",
+   "titulo": "Cada vecino eBGP del banco tiene filtro de salida",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "ospf",
+   "titulo": "la red converge en menos de 120 s (tardó 19 s)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "ospf",
+   "titulo": "sede: sus 3 vecinos en Full, cada uno por su enlace",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 42,
+   "error": null
+  },
+  {
+   "archivo": "ospf",
+   "titulo": "cpd: sus 3 vecinos en Full, cada uno por su enlace",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 42,
+   "error": null
+  },
+  {
+   "archivo": "ospf",
+   "titulo": "suc1: sus 2 vecinos en Full, cada uno por su enlace",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 39,
+   "error": null
+  },
+  {
+   "archivo": "ospf",
+   "titulo": "suc2: sus 2 vecinos en Full, cada uno por su enlace",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 39,
+   "error": null
+  },
+  {
+   "archivo": "bgp",
+   "titulo": "sede: sesiones BGP con isp1 y cpd (iBGP)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 39,
+   "error": null
+  },
+  {
+   "archivo": "bgp",
+   "titulo": "cpd: sesiones BGP con isp2 y sede (iBGP) y el socio",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 39,
+   "error": null
+  },
+  {
+   "archivo": "bgp",
+   "titulo": "isp1: sesiones BGP con el banco y la nube",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 40,
+   "error": null
+  },
+  {
+   "archivo": "bgp",
+   "titulo": "isp2: sesiones BGP con el banco y la nube",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 40,
+   "error": null
+  },
+  {
+   "archivo": "bgp",
+   "titulo": "nube: sesiones BGP con isp1 y isp2",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 39,
+   "error": null
+  },
+  {
+   "archivo": "bgp",
+   "titulo": "socio: sesiones BGP con el banco (cpd)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 40,
+   "error": null
+  },
+  {
+   "archivo": "bgp",
+   "titulo": "el banco no hace de tránsito: ningún proveedor aprende las rutas del otro por el banco",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 80,
+   "error": null
+  },
+  {
+   "archivo": "rutas",
+   "titulo": "sede aprende por OSPF las redes de los demás",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 40,
+   "error": null
+  },
+  {
+   "archivo": "rutas",
+   "titulo": "cpd aprende por OSPF las redes de los demás",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 39,
+   "error": null
+  },
+  {
+   "archivo": "rutas",
+   "titulo": "suc1 aprende por OSPF las redes de los demás",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 40,
+   "error": null
+  },
+  {
+   "archivo": "rutas",
+   "titulo": "suc2 aprende por OSPF las redes de los demás",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 39,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "la sucursal 1 llega a los servidores por la sede, no por el respaldo",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 41,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "la sucursal 2 llega a los servidores por la sede, no por el respaldo",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 39,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "el centro de datos responde a la sucursal 1 por la sede",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 40,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "el centro de datos responde a la sucursal 2 por la sede",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 39,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "entre sucursales se pasa por la sede",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 39,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "la sucursal 1 sale a internet por la sede",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 39,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "la sucursal 2 sale a internet por la sede",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 39,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "el centro de datos también sale a internet por la sede mientras isp1 esté arriba",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 39,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "internet vuelve al banco por isp1",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 38,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "isp2 llega al banco por la nube e isp1: el camino directo está alargado a propósito",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 40,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "traceroute de la sucursal 1 a los servidores: suc1 → sede → cpd",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 29,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "traceroute de la sucursal 2 a los servidores: suc2 → sede → cpd",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 29,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "traceroute de la sucursal 1 a internet: suc1 → sede → isp1 → nube",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 29,
+   "error": null
+  },
+  {
+   "archivo": "camino",
+   "titulo": "traceroute de los servidores a internet: cpd → sede → isp1 → nube",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 32,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "pc-suc1 llega a srv (10.10.10.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2069,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "pc-suc2 llega a srv (10.10.10.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "pc-sede llega a srv (10.10.10.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2111,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "pc-suc1 llega a pc-suc2 (10.1.2.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "pc-suc2 llega a pc-sede (10.0.1.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "srv llega a pc-suc1 (10.1.1.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2111,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "admin llega a srv (10.10.10.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "pc-suc1 llega a web (203.0.113.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "pc-suc2 llega a web (203.0.113.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  },
+  {
+   "archivo": "alcance",
+   "titulo": "srv llega a web (203.0.113.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  },
+  {
+   "archivo": "acceso",
+   "titulo": "pc-suc1 NO llega a la red de gestión (10.0.99.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  },
+  {
+   "archivo": "acceso",
+   "titulo": "pc-suc2 NO llega a la red de gestión (10.0.99.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  },
+  {
+   "archivo": "acceso",
+   "titulo": "web NO llega a la red de gestión (10.0.99.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2113,
+   "error": null
+  },
+  {
+   "archivo": "acceso",
+   "titulo": "pc-sede sí llega a la red de gestión (10.0.99.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2111,
+   "error": null
+  },
+  {
+   "archivo": "acceso",
+   "titulo": "srv sí llega a la red de gestión (10.0.99.10)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2112,
+   "error": null
+  },
+  {
+   "archivo": "ataques",
+   "titulo": "los servidores sí escuchan en 80 y 443 (vistos desde ellos mismos)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 120,
+   "error": null
+  },
+  {
+   "archivo": "ataques",
+   "titulo": "el hacker intenta entrar a la red de gestión: se lo frena",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 2056,
+   "error": null
+  },
+  {
+   "archivo": "ataques",
+   "titulo": "el hacker intenta llegar a una computadora de la sucursal 1: se lo frena",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 3112,
+   "error": null
+  },
+  {
+   "archivo": "ataques",
+   "titulo": "el hacker intenta hacer ping a los servidores: se lo frena",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 3072,
+   "error": null
+  },
+  {
+   "archivo": "ataques",
+   "titulo": "el hacker intenta abrir el puerto 80 de los servidores: se lo frena",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 5031,
+   "error": null
+  },
+  {
+   "archivo": "ataques",
+   "titulo": "el hacker intenta abrir el puerto 443 de los servidores (el servicio público): pasa",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 30,
+   "error": null
+  },
+  {
+   "archivo": "ataques",
+   "titulo": "el hacker intenta abrir el servidor autorizador: se lo frena",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 5030,
+   "error": null
+  },
+  {
+   "archivo": "ataques",
+   "titulo": "el hacker se disfraza de la sucursal 1 (10.1.1.99): sus paquetes no llegan a los servidores",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "ataques",
+   "titulo": "el filtro anti-suplantación del borde los frenó (3 paquetes)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "socio",
+   "titulo": "el socio solo aprende del banco la red del autorizador",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 38,
+   "error": null
+  },
+  {
+   "archivo": "socio",
+   "titulo": "la red del socio no se anuncia a internet",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 78,
+   "error": null
+  },
+  {
+   "archivo": "socio",
+   "titulo": "el socio llega a autorizador por el puerto 443",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 30,
+   "error": null
+  },
+  {
+   "archivo": "socio",
+   "titulo": "el socio NO llega a autorizador por el puerto 80",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 5030,
+   "error": null
+  },
+  {
+   "archivo": "socio",
+   "titulo": "el socio NO llega a srv por el puerto 443",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 1035,
+   "error": null
+  },
+  {
+   "archivo": "socio",
+   "titulo": "el socio NO llega a admin",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 3112,
+   "error": null
+  },
+  {
+   "archivo": "socio",
+   "titulo": "el socio NO llega a pc-suc1",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 3072,
+   "error": null
+  },
+  {
+   "archivo": "socio",
+   "titulo": "una sucursal NO llega a la red del socio",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 3071,
+   "error": null
+  },
+  {
+   "archivo": "caidas",
+   "titulo": "si se corta el enlace principal de la sucursal 1 (sede–suc1), pc-suc1 sigue llegando a srv (se perdieron 0.0 s; lo aceptable es 3 s)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "caidas",
+   "titulo": "sin el enlace principal de la sucursal 1 (sede–suc1), el tráfico va por el respaldo: pc-suc1 → suc1 → cpd → srv",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "caidas",
+   "titulo": "al reponer el enlace principal de la sucursal 1 (sede–suc1), la red vuelve sola al camino principal",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "caidas",
+   "titulo": "si se corta el enlace a isp1, la salida principal a internet (sede–isp1), pc-suc1 sigue llegando a web (se perdieron 0.2 s; lo aceptable es 15 s)",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "caidas",
+   "titulo": "sin el enlace a isp1, la salida principal a internet (sede–isp1), el tráfico va por el respaldo: pc-suc1 → suc1 → sede → cpd → isp2 → nube → web",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  },
+  {
+   "archivo": "caidas",
+   "titulo": "al reponer el enlace a isp1, la salida principal a internet (sede–isp1), la red vuelve sola al camino principal",
+   "proyecto": null,
+   "estado": "pasa",
+   "ms": 0,
+   "error": null
+  }
+ ]
+}
