@@ -49,5 +49,22 @@
     },
     "objetivo": "https://davidameth.dev",
     "codigo": "https://github.com/daveprojectdev/qa/blob/main/checks/red_dns.py"
+  },
+  {
+    "id": "lab-red",
+    "nombre": {
+      "es": "Lab de red",
+      "en": "Network lab"
+    },
+    "que": {
+      "es": "Containerlab levanta la red de un banco (sede, centro de datos y dos sucursales, con routers FRRouting en OSPF) y comprueba los vecinos, las rutas, el camino del tráfico y el alcance entre redes locales.",
+      "en": "Containerlab spins up a bank's network (headquarters, data center, and two branches, with FRRouting routers running OSPF) and checks neighbors, routes, the traffic path, and reachability between local networks."
+    },
+    "cuando": {
+      "es": "en cada push a main y los lunes a las 06:00 (hora de Panamá).",
+      "en": "on every push to main and on Mondays at 6:00 a.m. (Panama time)."
+    },
+    "objetivo": "https://github.com/daveprojectdev/lab-red-banco#la-red",
+    "codigo": "https://github.com/daveprojectdev/lab-red-banco/blob/main/pruebas/probar.py"
   }
 ]
