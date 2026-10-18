@@ -91,9 +91,9 @@ h2{font:800 1.625rem/1.15 var(--f-display);letter-spacing:-.03em;margin:0}
    fallo de pruebas). La que solo conserva el resultado (`parcial`) lleva
    rayas dentro de la misma barra: antes iba más clara y no se entendía. La
    última terminada lleva un anillo. */
-.linea-tiempo{display:inline-flex;flex-direction:column;min-width:240px;margin:8px 0 0}
+.linea-tiempo{display:inline-flex;flex-direction:column;min-width:240px;max-width:100%;margin:8px 0 0}
 .historial{display:flex;gap:3px;height:28px;margin:0 0 4px}
-.historial>*{flex:0 0 14px;border-radius:2px;transition:transform .15s}
+.historial>*{flex:0 1 14px;min-width:4px;border-radius:2px;transition:transform .15s}
 .historial a:hover{transform:scaleY(1.15)}
 .historial a:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
 .pasa:is(a,i){background:var(--verde)}
@@ -150,4 +150,7 @@ h2{font:800 1.625rem/1.15 var(--f-display);letter-spacing:-.03em;margin:0}
   main{padding:18px 16px 72px}
   .barra{margin-bottom:48px}
   .placa{padding:24px 20px}
+  /* Treinta barras no caben a 14 px en un teléfono: se angostan y se juntan. */
+  .linea-tiempo{display:flex;min-width:0}
+  .historial{gap:2px}
 }
