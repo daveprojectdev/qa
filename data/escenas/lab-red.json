@@ -95,7 +95,7 @@
     "cpd",
     "srv"
    ],
-   "vuelta_s": 18,
+   "vuelta_s": 19,
    "repuesto": [
     "pc-suc1",
     "suc1",
@@ -129,7 +129,7 @@
     "nube",
     "web"
    ],
-   "vuelta_s": 11,
+   "vuelta_s": 10,
    "repuesto": [
     "pc-suc1",
     "suc1",
@@ -146,35 +146,35 @@
    "a": "admin",
    "paso": false,
    "esperado": false,
-   "respuesta": "3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2079ms"
+   "respuesta": "3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2084ms"
   },
   {
    "de": "pc-suc2",
    "a": "admin",
    "paso": false,
    "esperado": false,
-   "respuesta": "3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2079ms"
+   "respuesta": "3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2082ms"
   },
   {
    "de": "web",
    "a": "admin",
    "paso": false,
    "esperado": false,
-   "respuesta": "3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2079ms"
+   "respuesta": "3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2083ms"
   },
   {
    "de": "pc-sede",
    "a": "admin",
    "paso": true,
    "esperado": true,
-   "respuesta": "rtt min/avg/max/mdev = 0.055/0.059/0.064/0.003 ms"
+   "respuesta": "rtt min/avg/max/mdev = 0.067/0.069/0.072/0.002 ms"
   },
   {
    "de": "srv",
    "a": "admin",
    "paso": true,
    "esperado": true,
-   "respuesta": "rtt min/avg/max/mdev = 0.063/0.073/0.079/0.007 ms"
+   "respuesta": "rtt min/avg/max/mdev = 0.083/0.086/0.094/0.005 ms"
   }
  ],
  "ataques": [
@@ -185,7 +185,7 @@
    "puerto": null,
    "paso": false,
    "esperado": false,
-   "detalle": "3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2081ms"
+   "detalle": "3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2084ms"
   },
   {
    "intento": "llegar a una computadora de la sucursal 1",
@@ -194,7 +194,7 @@
    "puerto": null,
    "paso": false,
    "esperado": false,
-   "detalle": "3 packets transmitted, 0 received, 100% packet loss, time 2080ms"
+   "detalle": "3 packets transmitted, 0 received, 100% packet loss, time 2084ms"
   },
   {
    "intento": "hacer ping a los servidores",
@@ -203,7 +203,7 @@
    "puerto": null,
    "paso": false,
    "esperado": false,
-   "detalle": "3 packets transmitted, 0 received, 100% packet loss, time 2041ms"
+   "detalle": "3 packets transmitted, 0 received, 100% packet loss, time 2042ms"
   },
   {
    "intento": "abrir el puerto 80 de los servidores",
@@ -277,7 +277,7 @@
    "puerto": null,
    "paso": false,
    "esperado": false,
-   "detalle": "3 packets transmitted, 0 received, +1 errors, 100% packet loss, time 2078ms"
+   "detalle": "3 packets transmitted, 0 received, +1 errors, 100% packet loss, time 2084ms"
   },
   {
    "intento": "cajeros → pc-suc1",
@@ -286,7 +286,7 @@
    "puerto": null,
    "paso": false,
    "esperado": false,
-   "detalle": "3 packets transmitted, 0 received, 100% packet loss, time 2040ms"
+   "detalle": "3 packets transmitted, 0 received, 100% packet loss, time 2044ms"
   },
   {
    "intento": "pc-suc1 → cajeros",
@@ -295,11 +295,11 @@
    "puerto": null,
    "paso": false,
    "esperado": false,
-   "detalle": "3 packets transmitted, 0 received, 100% packet loss, time 2040ms"
+   "detalle": "3 packets transmitted, 0 received, 100% packet loss, time 2044ms"
   }
  ],
- "convergencia_s": 25,
- "fecha": "2026-10-19T17:27:59Z",
+ "convergencia_s": 19,
+ "fecha": "2026-10-29T02:41:28Z",
  "commit": "2932177",
  "resultado": "pasa"
 }
