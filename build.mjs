@@ -16,6 +16,7 @@
 
 import { readFileSync, readdirSync, mkdirSync, writeFileSync, cpSync, rmSync, existsSync } from "node:fs";
 import { join, basename } from "node:path";
+import { linea, ISO_CSS } from "./linea.mjs";
 
 const RAIZ = import.meta.dirname;
 const SALIDA = join(RAIZ, "dist");
@@ -363,6 +364,29 @@ function paginaCorrida(s, i, t, idioma) {
   });
 }
 
+// La línea «pasa / no pasa» (linea.mjs) con la piel de esta página: su letra,
+// sus grises y sus verdes y rojos. El gris del kit no llega al contraste AA, así
+// que van los de aquí; con [data-theme] para ganarle a los estilos del kit.
+const PIEL_LINEA = `
+.linea{margin:0 0 2.5rem}
+.linea .iso{--anatomy-mono:var(--f-mono)}
+.linea .iso[data-theme]{--anatomy-muted:var(--suave);--anatomy-text:var(--suave);--anatomy-card:var(--nucleo);--anatomy-red:var(--rojo)}
+.linea .iso-figure{margin:0}
+.linea .iso-plate{background:transparent;box-shadow:none;padding:28px 0 36px}
+.linea .iso-plate-corners{inset:0}
+.linea .iso-legend{margin-top:20px;font-family:var(--f-texto)}
+.linea .iso-stage{cursor:pointer;touch-action:manipulation}
+.linea .iso-stage:focus-visible{outline:2px solid var(--acento);outline-offset:4px}
+.ln-luz{fill:var(--anatomy-paper);stroke:var(--anatomy-lo);stroke-width:.5;vector-effect:non-scaling-stroke}
+.linea [data-luz="pasa"] .ln-luz{fill:var(--verde)}
+.linea [data-luz="falla"] .ln-luz{fill:var(--rojo)}
+.ln-pieza[data-falla] path:not(.iso-edge):not(.iso-crease){fill:var(--rojo)}
+.ln-bandeja .iso-line{stroke:var(--rojo)}
+.ln-caja text{font-variant-numeric:tabular-nums}
+.ln-titulo{font:13px/1.45 var(--f-mono);color:var(--suave);min-height:2.9em;margin:.6rem 0 0}
+@media (max-width:560px){.ln-titulo{min-height:4.35em}}
+`;
+
 function portada(idioma) {
   const t = T[idioma];
   return documento({
@@ -376,6 +400,9 @@ function portada(idioma) {
     <h1>${t.titulo}</h1>
     <p>${t.intro}</p>
   </header>
+  <style>${ISO_CSS}${PIEL_LINEA}</style>
+  ${linea({ suites, datos: DATOS, idioma })}
+  <script type="module" src="/linea.js"></script>
   <div class="suites">
     ${suites.map((s) => tarjeta(s, t, idioma)).join("\n")}
   </div>
